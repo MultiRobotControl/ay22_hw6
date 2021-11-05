@@ -1,7 +1,8 @@
 %% Load the file
 % Filename
 clear all
-fname = 'cora_tuned.bag';
+
+fname = 'hw6data.bag';
 % Create a bag file object with the file name
 % by omitting the semicolon this displays some information about
 % the bag file
@@ -12,7 +13,7 @@ bag.AvailableTopics;
  
 % Create a time series of the Odometry data
 % Retrieve the messages as a cell array
-odom_msgs = select(bag,'Topic','/cora/robot_localization/odometry/filtered');
+odom_msgs = select(bag,'Topic','/cora/sensors/p3d');
  
 % Create a timeseries object of the subset of message fields we are interested in
 odom_ts = timeseries(odom_msgs,'Pose.Pose.Position.X','Pose.Pose.Position.Y', ...
